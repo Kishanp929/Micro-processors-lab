@@ -1,0 +1,96 @@
+A51 MACRO ASSEMBLER  BUB_SORT                                                             02/11/2023 23:43:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\bub_sort.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE bub_sort.asm SET(SMALL) DEBUG PRINT(.\Listings\bub_sort.lst) OBJECT(.\O
+                      bjects\bub_sort.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+0100 3130              5     ACALL SORT
+0102 80FE              6     HERE: SJMP HERE
+0130                   7     ORG 130H
+                       8     
+0130                   9     SORT:
+0130 7A08             10     MOV R2 , #08
+0132 7870             11     MOV R0 , #70H
+0134 7960             12     MOV R1 , #60H
+0136                  13     kishan :
+                      14     
+0136 E7               15     MOV A, @R1
+0137 F6               16     MOV @R0,A
+0138 08               17     INC R0
+0139 09               18     INC R1
+013A DAFA             19     DJNZ R2 , kishan 
+013C E7               20     MOV A, @R1
+013D F6               21     MOV @R0,A
+                      22     
+013E 7870             23     MOV R0 , #70H
+0140 7971             24     MOV R1 , #71H
+0142 7B07             25     MOV R3 , #07H
+0144 7C07             26     MOV R4 , #07H
+                      27     
+                      28     
+                      29     
+0146                  30     Here3 :
+0146                  31     Here2 :
+                      32     
+0146 E6               33     MOV A , @R0
+0147 87F0             34     MOV B , @R1
+0149 95F0             35     SUBB A , B
+014B 400A             36     JC LOL 
+                      37     
+014D E7               38     MOV A, @R1
+014E 86F0             39     MOV B,@R0
+0150 F6               40     MOV @R0,A
+0151 A7F0             41     MOV @R1,B
+                      42     
+0153 08               43     INC R0
+0154 09               44     INC R1
+0155 5002             45     JNC kis 
+0157                  46     LOL :
+0157 08               47     INC R0
+0158 09               48     INC R1
+0159                  49     kis:
+0159 DBEB             50     DJNZ R3 , Here2
+                      51      
+015B 7870             52     MOV R0 , #70H
+015D 7971             53     MOV R1 , #71H
+015F 7B07             54     MOV R3 , #07H
+0161 DCE3             55     DJNZ R4 , Here3
+                      56     
+                      57     
+A51 MACRO ASSEMBLER  BUB_SORT                                                             02/11/2023 23:43:29 PAGE     2
+
+                      58     
+                      59     
+0163 22               60     RET
+                      61     END
+A51 MACRO ASSEMBLER  BUB_SORT                                                             02/11/2023 23:43:29 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+HERE2. . . . . . .  C ADDR   0146H   A   
+HERE3. . . . . . .  C ADDR   0146H   A   
+KIS. . . . . . . .  C ADDR   0159H   A   
+KISHAN . . . . . .  C ADDR   0136H   A   
+LOL. . . . . . . .  C ADDR   0157H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+SORT . . . . . . .  C ADDR   0130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

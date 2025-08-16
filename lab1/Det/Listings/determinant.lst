@@ -1,0 +1,69 @@
+A51 MACRO ASSEMBLER  DETERMINANT                                                          01/16/2023 19:35:16 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\determinant.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE determinant.asm SET(SMALL) DEBUG PRINT(.\Listings\determinant.lst) OBJE
+                      CT(.\Objects\determinant.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+0100 3130              5     CALL DET
+0102 80FE              6     HERE: SJMP HERE
+0130                   7     ORG 130H
+                       8     
+0130                   9     DET:
+0130 E560             10     MOV A , 60H
+0132 8563F0           11     MOV B , 63H
+0135 A4               12     MUL AB
+0136 A8F0             13     MOV R0 , B
+0138 F9               14     MOV R1 , A
+                      15     
+0139 E561             16     MOV A , 61H
+013B 8562F0           17     MOV B , 62H
+                      18     
+013E A4               19     MUL AB
+                      20     
+013F AAF0             21     MOV R2 , B
+0141 FB               22     MOV R3 , A
+                      23     
+0142 E9               24     MOV A , R1
+0143 8BF0             25     MOV B , R3
+                      26     
+0145 95F0             27     SUBB A , B
+                      28     
+0147 F9               29     MOV R1 , A
+                      30     
+0148 E8               31     MOV A  , R0
+0149 8AF0             32     MOV B , R2
+014B 95F0             33     SUBB A , B
+                      34     
+014D F8               35     MOV R0 , A
+                      36     
+014E 8870             37     MOV 70H , R0
+0150 8971             38     MOV 71H , R1
+                      39     
+0152 22               40     RET
+                      41     END
+A51 MACRO ASSEMBLER  DETERMINANT                                                          01/16/2023 19:35:16 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+DET. . . . . . . .  C ADDR   0130H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
