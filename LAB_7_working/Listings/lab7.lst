@@ -1,0 +1,229 @@
+C51 COMPILER V9.60.7.0   LAB7                                                              03/07/2023 17:47:25 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LAB7
+OBJECT MODULE PLACED IN .\Objects\lab7.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE lab7.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\lab7
+                    -.lst) TABS(2) OBJECT(.\Objects\lab7.obj)
+
+line level    source
+
+   1          #include <at89c5131.h>
+   2          #include "lcd.h"
+   3          
+   4          code unsigned char display_msg1[] = " Enter Password ";
+   5          code unsigned char display_msg2[] = "Correct Password";
+   6          code unsigned char display_msg3[] = " Access Granted ";
+   7          code unsigned char display_msg4[] = " Wrong Password ";
+   8          code unsigned char display_msg5[] = " Access  Denied ";
+   9          unsigned char z[8];
+  10          unsigned char a;
+  11          unsigned int i = 0;
+  12          
+  13          void main(void)
+  14          {
+  15   1        lcd_init();
+  16   1        lcd_cmd(0x80);
+  17   1        msdelay(4);
+  18   1        lcd_write_string(display_msg1); 
+  19   1        
+  20   1        for(i=0;i<8;i++)
+  21   1        {
+  22   2          P3 = 0x0f;
+  23   2          K1: a = P3;
+  24   2          a = a&0x0f;
+  25   2          if(a != 0x0f)
+  26   2          {goto K1;}
+  27   2          
+  28   2          K2: msdelay(20);
+  29   2          a = P3;
+  30   2          a = a&0x0f;
+  31   2          if(a != 0x0f)
+  32   2          {goto over;}
+  33   2          else {goto K2;}
+  34   2          
+  35   2          over: msdelay(20);
+  36   2          a = P3;
+  37   2          a = a&0x0f;
+  38   2          if(a != 0x0f)
+  39   2          {goto over1;}
+  40   2          else {goto K2;}
+  41   2          
+  42   2          over1: P3 = 0xef;
+  43   2          a = P3&0x0f;
+  44   2          if(a != 0x0f)
+  45   2          {goto row0;}
+  46   2          
+  47   2          P3 = 0xdf;
+  48   2          a = P3&0x0f;
+  49   2          if(a != 0x0f)
+  50   2          {goto row1;}
+  51   2          
+  52   2          P3 = 0xbf;
+  53   2          a = P3&0x0f;
+  54   2          if(a != 0x0f)
+C51 COMPILER V9.60.7.0   LAB7                                                              03/07/2023 17:47:25 PAGE 2   
+
+  55   2          {goto row2;}
+  56   2          
+  57   2          P3 = 0x7f;
+  58   2          a = P3&0x0f;
+  59   2          if(a != 0x0f)
+  60   2          {goto row3;}
+  61   2          
+  62   2          goto K2;
+  63   2          
+  64   2          row0: if(P3_3 == 0)
+  65   2          {z[i] = '1';
+  66   3            lcd_cmd(0xC0);
+  67   3            msdelay(4);
+  68   3            lcd_write_string(z);
+  69   3            continue;}
+  70   2          
+  71   2          else if(P3_2 == 0)
+  72   2          {z[i] = '2';
+  73   3          lcd_cmd(0xC0);
+  74   3          msdelay(4);
+  75   3          lcd_write_string(z);
+  76   3          continue;}
+  77   2          
+  78   2          else if(P3_1 == 0)
+  79   2          {z[i] = '3';
+  80   3          lcd_cmd(0xC0);
+  81   3          msdelay(4);
+  82   3          lcd_write_string(z);
+  83   3          continue;}
+  84   2          
+  85   2          else if(P3_0 == 0)
+  86   2          {z[i] = 'A';
+  87   3          lcd_cmd(0xC0);
+  88   3          msdelay(4);
+  89   3          lcd_write_string(z);
+  90   3          continue;}
+  91   2      
+  92   2          row1: if(P3_3 == 0)
+  93   2          {z[i] = '4';
+  94   3            lcd_cmd(0xC0);
+  95   3            msdelay(4);
+  96   3            lcd_write_string(z);
+  97   3          continue;}
+  98   2          
+  99   2          else if(P3_2 == 0)
+ 100   2          {z[i] = '5';
+ 101   3          lcd_cmd(0xC0);
+ 102   3          msdelay(4);
+ 103   3          lcd_write_string(z);
+ 104   3          continue;}
+ 105   2          
+ 106   2          else if(P3_1 == 0)
+ 107   2          {z[i] = '6';
+ 108   3          lcd_cmd(0xC0);
+ 109   3          msdelay(4);
+ 110   3          lcd_write_string(z);
+ 111   3          continue;}
+ 112   2          
+ 113   2          else if(P3_0 == 0)
+ 114   2          {z[i] = 'B';
+ 115   3          lcd_cmd(0xC0);
+ 116   3          msdelay(4);
+C51 COMPILER V9.60.7.0   LAB7                                                              03/07/2023 17:47:25 PAGE 3   
+
+ 117   3          lcd_write_string(z);
+ 118   3          continue;}
+ 119   2          
+ 120   2          row2: if(P3_3 == 0)
+ 121   2          {z[i] = '7';
+ 122   3            lcd_cmd(0xC0);
+ 123   3            msdelay(4);
+ 124   3            lcd_write_string(z);
+ 125   3          continue;}
+ 126   2          
+ 127   2          else if(P3_2 == 0)
+ 128   2          {z[i] = '8';
+ 129   3          lcd_cmd(0xC0);
+ 130   3          msdelay(4);
+ 131   3          lcd_write_string(z);
+ 132   3          continue;}
+ 133   2          
+ 134   2          else if(P3_1 == 0)
+ 135   2          {z[i] = '9';
+ 136   3          lcd_cmd(0xC0);
+ 137   3          msdelay(4);
+ 138   3          lcd_write_string(z);
+ 139   3          continue;}
+ 140   2          
+ 141   2          else if(P3_0 == 0)
+ 142   2          {z[i] = 'C';
+ 143   3          lcd_cmd(0xC0);
+ 144   3          msdelay(4);
+ 145   3          lcd_write_string(z);
+ 146   3          continue;}
+ 147   2          
+ 148   2          row3: if(P3_3 == 0)
+ 149   2          {z[i] = '*';
+ 150   3            lcd_cmd(0xC0);
+ 151   3            msdelay(4);
+ 152   3            lcd_write_string(z);
+ 153   3          continue;}
+ 154   2          
+ 155   2          else if(P3_2 == 0)
+ 156   2          {z[i] = '0';
+ 157   3          lcd_cmd(0xC0);
+ 158   3          msdelay(4);
+ 159   3          lcd_write_string(z);
+ 160   3          continue;}
+ 161   2          
+ 162   2          else if(P3_1 == 0)
+ 163   2          {z[i] = '#';
+ 164   3          lcd_cmd(0xC0);
+ 165   3          msdelay(4);
+ 166   3          lcd_write_string(z);
+ 167   3          continue;}
+ 168   2          
+ 169   2          else if(P3_0 == 0)
+ 170   2          {z[i] = 'D';
+ 171   3          lcd_cmd(0xC0);
+ 172   3          msdelay(4);
+ 173   3          lcd_write_string(z);
+ 174   3          continue;}
+ 175   2        }
+ 176   1          msdelay(1000);
+ 177   1          if((z[0] == '1') & (z[1] == '5') & (z[2] == 'A') & (z[3] == '8') & (z[4] == '*') & (z[5] == 'D') & (z[6]
+             - == '6') & (z[7] == '#'))
+C51 COMPILER V9.60.7.0   LAB7                                                              03/07/2023 17:47:25 PAGE 4   
+
+ 178   1          {
+ 179   2            lcd_cmd(0x80);
+ 180   2            msdelay(4);
+ 181   2            lcd_write_string(display_msg2);
+ 182   2            lcd_cmd(0xC0);
+ 183   2            msdelay(4);
+ 184   2            lcd_write_string(display_msg3);
+ 185   2            while(1);
+ 186   2          }
+ 187   1          
+ 188   1          else
+ 189   1          {
+ 190   2            lcd_cmd(0x80);
+ 191   2            msdelay(4);
+ 192   2            lcd_write_string(display_msg4);
+ 193   2            lcd_cmd(0xC0);
+ 194   2            msdelay(4);
+ 195   2            lcd_write_string(display_msg5);
+ 196   2            while(1);
+ 197   2          }
+ 198   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    700    ----
+   CONSTANT SIZE    =     85    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     11       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
