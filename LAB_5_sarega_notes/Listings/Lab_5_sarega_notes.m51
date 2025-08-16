@@ -1,0 +1,125 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/07/2023  14:45:21  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\sarega_notes_code.obj TO .\Objects\Lab_5_sarega_notes PRINT (.\Listings\Lab_5_sare
+>> ga_notes.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\sarega_notes_code.obj (SAREGA_NOTES_CODE)
+
+
+LINK MAP OF MODULE:  .\Objects\Lab_5_sarega_notes (SAREGA_NOTES_CODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0176H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Lab_5_sarega_notes (SAREGA_NOTES_CODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SAREGA_NOTES_CODE
+  C:0121H         SYMBOL        AGAIN
+  C:013AH         SYMBOL        AGAIN2
+  C:0153H         SYMBOL        AGAIN3
+  C:016CH         SYMBOL        AGAIN4
+  C:011FH         SYMBOL        DELAY
+  C:0138H         SYMBOL        DELAY2
+  C:0151H         SYMBOL        DELAY3
+  C:016AH         SYMBOL        DELAY4
+  C:0113H         SYMBOL        HERE
+  C:0174H         SYMBOL        HERE1
+  C:012CH         SYMBOL        HERE2
+  C:0145H         SYMBOL        HERE3
+  C:015EH         SYMBOL        HERE4
+  C:0110H         SYMBOL        JUMP0
+  C:0129H         SYMBOL        JUMP1
+  C:0142H         SYMBOL        JUMP2
+  C:015BH         SYMBOL        JUMP3
+  C:0100H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  B:0088H.5       SYMBOL        TF0
+  D:008CH         SYMBOL        TH0
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0000H         LINE#         2
+  C:0100H         LINE#         10
+  C:0102H         LINE#         11
+  C:0104H         LINE#         13
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/07/2023  14:45:21  PAGE 2
+
+
+  C:0106H         LINE#         14
+  C:0108H         LINE#         16
+  C:010AH         LINE#         17
+  C:010CH         LINE#         19
+  C:010EH         LINE#         20
+  C:0110H         LINE#         25
+  C:0113H         LINE#         26
+  C:0116H         LINE#         27
+  C:0119H         LINE#         28
+  C:011BH         LINE#         29
+  C:011DH         LINE#         30
+  C:011FH         LINE#         33
+  C:0121H         LINE#         34
+  C:0124H         LINE#         36
+  C:0126H         LINE#         37
+  C:0128H         LINE#         38
+  C:0129H         LINE#         47
+  C:012CH         LINE#         48
+  C:012FH         LINE#         49
+  C:0132H         LINE#         50
+  C:0134H         LINE#         51
+  C:0136H         LINE#         52
+  C:0138H         LINE#         55
+  C:013AH         LINE#         56
+  C:013DH         LINE#         58
+  C:013FH         LINE#         59
+  C:0141H         LINE#         60
+  C:0142H         LINE#         67
+  C:0145H         LINE#         68
+  C:0148H         LINE#         69
+  C:014BH         LINE#         70
+  C:014DH         LINE#         71
+  C:014FH         LINE#         72
+  C:0151H         LINE#         75
+  C:0153H         LINE#         76
+  C:0156H         LINE#         77
+  C:0158H         LINE#         78
+  C:015AH         LINE#         79
+  C:015BH         LINE#         85
+  C:015EH         LINE#         86
+  C:0161H         LINE#         87
+  C:0164H         LINE#         88
+  C:0166H         LINE#         89
+  C:0168H         LINE#         90
+  C:016AH         LINE#         93
+  C:016CH         LINE#         94
+  C:016FH         LINE#         95
+  C:0171H         LINE#         96
+  C:0173H         LINE#         97
+  C:0174H         LINE#         105
+  -------         ENDMOD        SAREGA_NOTES_CODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0079H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=374
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/07/2023  14:45:21  PAGE 3
+
+
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

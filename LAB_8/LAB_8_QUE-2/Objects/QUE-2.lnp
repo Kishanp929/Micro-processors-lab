@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\que2.obj" 
+TO ".\Objects\QUE-2" 
+PRINT(".\Listings\QUE-2.m51") RAMSIZE(256) 

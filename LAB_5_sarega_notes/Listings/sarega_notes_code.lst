@@ -1,0 +1,158 @@
+A51 MACRO ASSEMBLER  SAREGA_NOTES_CODE                                                    02/07/2023 14:45:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\sarega_notes_code.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sarega_notes_code.asm SET(SMALL) DEBUG PRINT(.\Listings\sarega_notes_co
+                      de.lst) OBJECT(.\Objects\sarega_notes_code.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 00H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+                       5     
+                       6     
+                       7     
+                       8     
+                       9     
+0100 A293             10     MOV C , P1.3
+0102 4057             11     JC JUMP3
+                      12     
+0104 A292             13     MOV C , P1.2
+0106 403A             14     JC JUMP2
+                      15     
+0108 A291             16     MOV C , P1.1
+010A 401D             17     JC JUMP1
+                      18     
+010C A290             19     MOV C , P1.0
+010E 4000             20     JC JUMP0
+                      21     
+                      22     
+0110                  23     JUMP0:
+                      24     
+0110 758901           25     MOV TMOD,#01 
+0113 758AC9           26     HERE: MOV TL0 , #0C9H 
+0116 758CF0           27     MOV TH0,#0F0H 
+0119 B287             28     CPL P0.7
+011B 311F             29     ACALL DELAY
+011D 80F4             30     SJMP HERE
+                      31     
+011F                  32     DELAY:
+011F D28C             33     SETB TR0 
+0121 308DFD           34     AGAIN: JNB TF0,AGAIN 
+                      35     
+0124 C28C             36     CLR TR0 
+0126 C28D             37     CLR TF0 
+0128 22               38     RET
+                      39     
+                      40     
+                      41     
+                      42     
+                      43     
+0129                  44     JUMP1:
+                      45     
+                      46     
+0129 758901           47     MOV TMOD,#01 
+012C 758A9F           48     HERE2: MOV TL0 , #9FH 
+012F 758CF2           49     MOV TH0,#0F2H 
+0132 B287             50     CPL P0.7
+0134 3138             51     ACALL DELAY2
+0136 80F4             52     SJMP HERE2
+                      53     
+0138                  54     DELAY2:
+0138 D28C             55     SETB TR0 
+013A 308DFD           56     AGAIN2: JNB TF0,AGAIN2 
+                      57     
+A51 MACRO ASSEMBLER  SAREGA_NOTES_CODE                                                    02/07/2023 14:45:21 PAGE     2
+
+013D C28C             58     CLR TR0 
+013F C28D             59     CLR TF0 
+0141 22               60     RET
+                      61     
+                      62     
+                      63     
+0142                  64     JUMP2:
+                      65     
+                      66     
+0142 758901           67     MOV TMOD,#01 
+0145 758A12           68     HERE3: MOV TL0 , #12H 
+0148 758CF4           69     MOV TH0,#0F4H 
+014B B287             70     CPL P0.7
+014D 3151             71     ACALL DELAY3
+014F 80F4             72     SJMP HERE3
+                      73     
+0151                  74     DELAY3:
+0151 D28C             75     SETB TR0 
+0153 308DFD           76     AGAIN3: JNB TF0,AGAIN3 
+0156 C28C             77     CLR TR0 
+0158 C28D             78     CLR TF0 
+015A 22               79     RET
+                      80     
+                      81     
+015B                  82     JUMP3:
+                      83     
+                      84     
+015B 758901           85     MOV TMOD,#01 
+015E 758AC4           86     HERE4: MOV TL0 , #0C4H 
+0161 758CF4           87     MOV TH0,#0F4H 
+0164 B287             88     CPL P0.7
+0166 316A             89     ACALL DELAY4
+0168 80F4             90     SJMP HERE4
+                      91     
+016A                  92     DELAY4:
+016A D28C             93     SETB TR0 
+016C 308DFD           94     AGAIN4: JNB TF0,AGAIN4 
+016F C28C             95     CLR TR0 
+0171 C28D             96     CLR TF0 
+0173 22               97     RET
+                      98     
+                      99     
+                     100     
+                     101     
+                     102     
+                     103     
+                     104     
+0174 80FE            105     HERE1: SJMP HERE1
+0130                 106     ORG 130H
+                     107     END
+A51 MACRO ASSEMBLER  SAREGA_NOTES_CODE                                                    02/07/2023 14:45:21 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0121H   A   
+AGAIN2 . . . . . .  C ADDR   013AH   A   
+AGAIN3 . . . . . .  C ADDR   0153H   A   
+AGAIN4 . . . . . .  C ADDR   016CH   A   
+DELAY. . . . . . .  C ADDR   011FH   A   
+DELAY2 . . . . . .  C ADDR   0138H   A   
+DELAY3 . . . . . .  C ADDR   0151H   A   
+DELAY4 . . . . . .  C ADDR   016AH   A   
+HERE . . . . . . .  C ADDR   0113H   A   
+HERE1. . . . . . .  C ADDR   0174H   A   
+HERE2. . . . . . .  C ADDR   012CH   A   
+HERE3. . . . . . .  C ADDR   0145H   A   
+HERE4. . . . . . .  C ADDR   015EH   A   
+JUMP0. . . . . . .  C ADDR   0110H   A   
+JUMP1. . . . . . .  C ADDR   0129H   A   
+JUMP2. . . . . . .  C ADDR   0142H   A   
+JUMP3. . . . . . .  C ADDR   015BH   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

@@ -1,0 +1,3 @@
+".\Objects\sarega_notes_code.obj" 
+TO ".\Objects\Lab_5_sarega_notes" 
+PRINT(".\Listings\Lab_5_sarega_notes.m51") RAMSIZE(256) 
