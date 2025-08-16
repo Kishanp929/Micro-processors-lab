@@ -1,0 +1,87 @@
+A51 MACRO ASSEMBLER  A_TO_D                                                               01/21/2023 11:49:19 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\A_to_D.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE A_to_D.asm SET(SMALL) DEBUG PRINT(.\Listings\A_to_D.lst) OBJECT(.\Objec
+                      ts\A_to_D.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 100H
+0100                   4     MAIN:
+0100 3130              5     CALL QUANT
+0102 80FE              6     HERE: SJMP HERE
+0130                   7     ORG 130H
+                       8     
+0130                   9     QUANT:
+                      10     
+                      11     
+0130 7860             12     MOV R0 , #60H
+0132 7970             13     MOV R1 , #70H
+0134 7A08             14     MOV R2 , #08H
+0136                  15     JUMP :
+0136 C3               16     CLR C
+0137 E6               17     MOV A , @R0
+0138 940A             18     SUBB A , #0AH
+013A 4014             19     JC HERE1
+                      20     
+013C E6               21     MOV A , @R0
+013D 9414             22     SUBB A , #14H
+013F 400B             23     JC HERE2
+                      24     
+0141 E6               25     MOV A , @R0
+0142 941E             26     SUBB A , #1EH
+0144 4002             27     JC HERE3
+                      28     
+0146 500C             29     JNC HERE4
+                      30     
+0148                  31     HERE3 :
+0148 7719             32     MOV @R1 , #19H 
+014A 400A             33     JC LOL1
+014C                  34     HERE2 :
+014C 770F             35     MOV @R1 , #0FH 
+014E 4006             36     JC LOL2
+0150                  37     HERE1 :
+0150 7705             38     MOV @R1 , #05H
+0152 4002             39     JC LOL3
+                      40     
+0154                  41     HERE4 :
+0154 7723             42     MOV @R1 , #23H
+0156                  43     LOL1 :
+0156                  44     LOL2 :
+0156                  45     LOL3 :
+                      46     
+0156 08               47     INC R0
+0157 09               48     INC R1
+                      49     
+0158 DADC             50     DJNZ R2 , JUMP
+015A 22               51     RET
+                      52     END
+A51 MACRO ASSEMBLER  A_TO_D                                                               01/21/2023 11:49:19 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   0102H   A   
+HERE1. . . . . . .  C ADDR   0150H   A   
+HERE2. . . . . . .  C ADDR   014CH   A   
+HERE3. . . . . . .  C ADDR   0148H   A   
+HERE4. . . . . . .  C ADDR   0154H   A   
+JUMP . . . . . . .  C ADDR   0136H   A   
+LOL1 . . . . . . .  C ADDR   0156H   A   
+LOL2 . . . . . . .  C ADDR   0156H   A   
+LOL3 . . . . . . .  C ADDR   0156H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+QUANT. . . . . . .  C ADDR   0130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

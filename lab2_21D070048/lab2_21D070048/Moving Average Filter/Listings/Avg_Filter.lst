@@ -1,0 +1,89 @@
+A51 MACRO ASSEMBLER  AVG_FILTER                                                           01/21/2023 15:03:40 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\Avg_Filter.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE Avg_Filter.asm SET(SMALL) DEBUG PRINT(.\Listings\Avg_Filter.lst) OBJECT
+                      (.\Objects\Avg_Filter.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 020100            1     LJMP MAIN
+0100                   2     ORG 100H
+0100                   3     MAIN:
+0100 3130              4     CALL FILT
+0102 80FE              5     HERE: SJMP HERE
+0130                   6     ORG 130H
+                       7     
+0130                   8     FILT:
+                       9     
+0130 7A61             10     MOV R2 , #61H
+0132 7B03             11     MOV R3 , #03H
+0134 7970             12     MOV R1 , #70H
+0136                  13     JUMP2 :
+0136 7400             14     MOV A , #00H
+0138 785F             15     MOV R0 , #5FH
+013A                  16     JUMP1 :
+013A 08               17     INC R0
+013B 1A               18     DEC R2
+013C 26               19     ADD A , @R0
+013D BA60FA           20     CJNE R2 ,#60H , JUMP1
+0140 75F004           21     MOV B , #04H
+0143 84               22     DIV AB
+0144 F7               23     MOV @R1, A
+0145 09               24     INC R1
+0146 AA00             25     MOV R2 , 00H
+0148 0A               26     INC R2
+0149 0A               27     INC R2
+014A DBEA             28     DJNZ R3 , JUMP2  
+                      29     
+                      30     
+014C 7400             31     MOV A , #00H
+014E 7860             32     MOV R0 , #60H
+0150 7A63             33     MOV R2 , #63H
+0152 7D60             34     MOV R5 , #60H
+0154 7B04             35     MOV R3 , #04H
+0156 7C05             36     MOV R4 , #05H
+0158 8007             37     SJMP KISHAN
+015A                  38     JUMP22 :
+015A 0D               39     INC R5 
+015B A805             40     MOV R0 , 05H
+015D 7400             41     MOV A , #00H
+015F 7B04             42     MOV R3 , #04
+0161                  43     KISHAN :
+0161                  44     JUMP11 :
+0161 26               45     ADD A , @R0
+0162 08               46     INC R0
+0163 DBFC             47     DJNZ R3 , JUMP11
+0165 75F004           48     MOV B , #04H
+0168 84               49     DIV AB
+0169 F7               50     MOV @R1 , A
+016A 09               51     INC R1
+016B DCED             52     DJNZ R4 , JUMP22 
+                      53     
+                      54     
+016D 22               55     RET
+                      56     END
+A51 MACRO ASSEMBLER  AVG_FILTER                                                           01/21/2023 15:03:40 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+FILT . . . . . . .  C ADDR   0130H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+JUMP1. . . . . . .  C ADDR   013AH   A   
+JUMP11 . . . . . .  C ADDR   0161H   A   
+JUMP2. . . . . . .  C ADDR   0136H   A   
+JUMP22 . . . . . .  C ADDR   015AH   A   
+KISHAN . . . . . .  C ADDR   0161H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
